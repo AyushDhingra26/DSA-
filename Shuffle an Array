@@ -1,0 +1,29 @@
+class Solution {
+public:
+    vector<int> original;
+
+    Solution(vector<int>& nums) {
+        original = nums;  
+    }
+    
+    vector<int> reset() {
+        return original;   
+    }
+    
+    vector<int> shuffle() {
+        vector<int> arr = original;  
+        
+        int i = arr.size();
+        int j, temp;
+
+        while(--i > 0){
+            j = rand() % (i + 1);
+
+            temp = arr[j];
+            arr[j] = arr[i];
+            arr[i] = temp;
+        }
+
+        return arr;
+    }
+};
