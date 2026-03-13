@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    
+    vector<char> arr = {'A','B','C','D','E','F','G','H'};
+    
+    int i = arr.size();
+    int j;
+    char temp;
+
+    srand(time(0));   // initialize random generator
+
+    while(--i > 0){
+        j = rand() % (i + 1);
+
+        temp = arr[j];
+        arr[j] = arr[i];
+        arr[i] = temp;
+    }
+
+    for(char c : arr){
+        cout << c << " ";
+    }
+
+}
